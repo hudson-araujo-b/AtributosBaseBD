@@ -1,4 +1,5 @@
 # AtributosBaseBD
+
 ```sql
 create database bdAgenciaViagens;
 use bdAgenciaViagens;
@@ -14,6 +15,7 @@ EnderecoCli varchar (100),
 CepCli varchar (9)
 );
 ```
+
 ```sql
 create database dbteste2a;
 use dbteste2a;
@@ -59,4 +61,51 @@ select Nome,Preco from Cliente where Preco <> 100.00;
 
 -- Pesquisa Personalizada
 select Nome from Cliente where Nome like '%P%';
+```
+
+```sql
+create database dbHerois;
+
+use dbHerois;
+
+drop table Produto;
+create table Herois (
+Id int primary key auto_increment,
+Nome varchar(50),
+Poder varchar(50),
+Cor varchar(30)
+);
+create table Produto (
+Id int primary key auto_increment,
+Nome varchar(50),
+Descricao varchar(150),
+Preco decimal(5,2)
+);
+
+insert into Herois(Nome, Poder, Cor) values ('Ignis','Controle total do fogo','Vermelho');
+insert into Herois(Nome, Poder, Cor) values ('Aquarion','Manipulação da água e cura','Azul');
+insert into Herois(Nome, Poder, Cor) values ('Terron','Super força e controle da terra','Marrom');
+insert into Herois(Nome, Poder, Cor) values ('Voltix','Velocidade e eletricidade','Amarelo');
+insert into Herois(Nome, Poder, Cor) values ('Noctra','Invisibilidade e sombras','Preto');
+
+insert into Produto(Nome, Descricao, Preco) values ('SmartLuz','Lâmpada inteligente controlada por app',79.90);
+insert into Produto(Nome, Descricao, Preco) values ('FoneWave','Fone sem fio com cancelamento de ruído',199.90);
+insert into Produto(Nome, Descricao, Preco) values ('FitBand Pro','Pulseira fitness com monitor cardíaco',149.90);
+insert into Produto(Nome, Descricao, Preco) values ('Café Turbo','Café energético premium em cápsulas',29.90);
+insert into Produto(Nome, Descricao, Preco) values ('CoolBottle','Garrafa térmica que mantém temperatura por 12h',59.90);
+
+select poder from Herois where Poder like '%c%';
+
+select * from Herois order by Nome asc;
+select * from Herois order by Nome desc;
+
+update Herois set Poder = 'Teletransporte' where Id = 4;
+
+alter table Produto
+add Preco_Venda decimal(10,2);
+
+select Nome,Preco from Produto where Preco < 100.00;
+
+select * from Herois;
+select * from Produto;
 ```
