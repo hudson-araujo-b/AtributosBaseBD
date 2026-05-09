@@ -4,7 +4,7 @@
 create database bdAgenciaViagens;
 use bdAgenciaViagens;
 
-create table cliente(
+create table tbCliente(
 IdCli int primary key auto_increment,
 EmailCli varchar (255) not null unique,
 TelefoneCli varchar (20) not null,
